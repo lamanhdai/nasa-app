@@ -166,19 +166,19 @@ export default {
   computed: {
     ...mapState(['photoList']),
     filteredList() {
-      const data = this.photoList.filter((photo) => !photo.deleted)
+      const list = this.photoList.filter((photo) => !photo.deleted)
       const sort = this.sortType
-      return this.sortBy(data, sort)
+      return this.sortBy(list, sort)
     },
     likedList() {
-      const data = this.photoList.filter((photo) => photo.liked && !photo.deleted)
+      const list = this.photoList.filter((photo) => photo.liked && !photo.deleted)
       const sort = this.sortType
-      return this.sortBy(data, sort)
+      return this.sortBy(list, sort)
     },
     deletedList() {
-      const data = this.photoList.filter((photo) => photo.deleted)
+      const list = this.photoList.filter((photo) => photo.deleted)
       const sort = this.sortType
-      return this.sortBy(data, sort)
+      return this.sortBy(list, sort)
     }
   },
   filters: {
